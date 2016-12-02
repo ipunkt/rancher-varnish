@@ -6,6 +6,8 @@ VARNISHADM="/usr/bin/varnishadm"
 #CONFIGFILES="/etc/varnish/${SVCNAME}.vcl"
 CONFIGFILE="/opt/varnish/etc/default.vcl"
 
+VARNISHD_PID="/var/run/varnish.pid"
+
 
 # Listen on 127.0.0.1:8080 and connect to backend 127.0.0.1:80
 #VARNISHD_OPTS="-a 127.0.0.1:8080 -a 127.0.0.1:8080"
