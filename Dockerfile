@@ -11,7 +11,7 @@ ENV SERVICE_NAME=varnish \
 ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/monit/bin"
 
 # Download and install traefik
-RUN apk add --no-cache varnish
+RUN apk add --no-cache varnish openrc
 COPY root /
 RUN chown -R ${SERVICE_USER}:${SERVICE_GROUP} /opt/monit && chmod +x /opt/monit/bin
 COPY varnishd /etc/conf.d/
