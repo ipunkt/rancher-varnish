@@ -1,5 +1,5 @@
 #!/bin/sh
-PIDFILE=/var/run/varnish.pid
+PIDFILE=/opt/varnish/run/varnish.pid
 
 case "$1" in
 	start)
