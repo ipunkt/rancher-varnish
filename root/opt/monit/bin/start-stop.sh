@@ -7,8 +7,12 @@ SECRET_FILE=${VARNISH_SECRET:/opt/varnish/etc/secret}
 
 case "$1" in
 	start)
-		 start-stop-daemon --pidfile "${PIDFIILE}" -S /usr/sbin/varnishd \
-			-a ${BIND}:${PORT} -P "${PIDFILE}" -T "127.0.0.1:8062" -f "${CONFIG_FILE}"
+		 echo start-stop-daemon --pidfile "${PIDFIILE}" -S /usr/sbin/varnishd -- \
+			-a ${BIND}:${PORT} -S "${SECRET_FILE}" -P "${PIDFILE}" \
+			-T "127.0.0.1:8062" -f "${CONFIG_FILE}"
+		 start-stop-daemon --pidfile "${PIDFIILE}" -S /usr/sbin/varnishd -- \
+			-a ${BIND}:${PORT} -S "${SECRET_FILE}" -P "${PIDFILE}" \
+			-T "127.0.0.1:8062" -f "${CONFIG_FILE}"
 		;;
 	stop)
 		 start-stop-daemon --pidfile "${PIDFIILE}" -K /usr/sbin/varnishd
