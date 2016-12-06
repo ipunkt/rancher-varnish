@@ -8,7 +8,7 @@ ENV SERVICE_NAME=varnish \
     SERVICE_UID=100 \
     SERVICE_GROUP=varnish \
     SERVICE_GID=101
-ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/monit/bin"
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/monit/bin:root/opt/varnish/bin/"
 
 # Download and install traefik
 RUN apk add --no-cache varnish openrc
