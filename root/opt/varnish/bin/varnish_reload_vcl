@@ -10,4 +10,4 @@ TIME=$(date +%s)
 varnishadm -S "${SECRET_FILE}" -T 127.0.0.1:6082 vcl.load varnish_$TIME "${CONFIG_FILE}"
 
 # Active this Varnish config
-varnishadm -S "${SECRET_FILE}"» -T 127.0.0.1:6082 vcl.use varnish_$TIME
+varnishadm -S "${SECRET_FILE}" -T 127.0.0.1:6082 vcl.use varnish_$TIME
