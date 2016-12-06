@@ -13,7 +13,7 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/moni
 # Download and install traefik
 RUN apk add --no-cache varnish openrc
 COPY root /
-RUN mkdir -p "$SERVICE_HOME/run" && mkdir -p "$SERVICE_HOME/etc" && chown -R ${SERVICE_USER}:${SERVICE_GROUP} "$SERVICE_HOME" /opt/monit
+RUN mkdir -p "$SERVICE_HOME/run" && chown -R ${SERVICE_USER}:${SERVICE_GROUP} "$SERVICE_HOME" /opt/monit
 COPY varnishd /etc/conf.d/
 
 WORKDIR $SERVICE_HOME
