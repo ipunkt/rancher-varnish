@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 PIDFILE=/opt/varnish/run/varnish.pid
 BIND=${BIND_ADDRESS:0.0.0.0}
 PORT=${PORT:8080}
