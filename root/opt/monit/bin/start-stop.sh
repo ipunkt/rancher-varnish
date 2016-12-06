@@ -9,10 +9,10 @@ case "$1" in
 	start)
 		 echo start-stop-daemon --pidfile "${PIDFILE}" -S /usr/sbin/varnishd -- \
 			-a ${BIND}:${PORT} -S "${SECRET_FILE}" -P "${PIDFILE}" \
-			-T "127.0.0.1:8062" -f "${CONFIG_FILE}"
+			-T "127.0.0.1:6082" -f "${CONFIG_FILE}"
 		 start-stop-daemon --pidfile "${PIDFILE}" -S /usr/sbin/varnishd -- \
 			-a ${BIND}:${PORT} -S "${SECRET_FILE}" -P "${PIDFILE}" \
-			-T "127.0.0.1:8062" -f "${CONFIG_FILE}"
+			-T "127.0.0.1:6082" -f "${CONFIG_FILE}"
 		;;
 	stop)
 		 start-stop-daemon --pidfile "${PIDFILE}" -K /usr/sbin/varnishd
