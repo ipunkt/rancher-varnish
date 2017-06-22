@@ -28,7 +28,7 @@ RUN mkdir -p /usr/src \
 	&& cd libvmod-querystring-${QUERYSTRING_VERSION} \
 	# && ./bootstrap \
 	&& ./autogen.sh \
-	&& ./configure \
+	&& ./configure --prefix=/usr \
 	&& make \
 	&& make check \
 	&& make install
