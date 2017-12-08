@@ -29,5 +29,6 @@ RUN mkdir -p /usr/src \
 	&& make check \
 	&& make install
 
+
 WORKDIR $SERVICE_HOME
 USER $SERVICE_USER
