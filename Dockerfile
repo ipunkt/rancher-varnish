@@ -27,7 +27,7 @@ ENV SERVICE_NAME=varnish \
     SERVICE_GID=101
 ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/monit/bin:/opt/varnish/bin/"
 RUN apk add --no-cache varnish openrc \
-	&& sed -i -e 's~set daemon 60~set daemon 10~' /opt/monit/etc/conf.d/basic
+	&& sed -i -e 's~set daemon 60~set daemon 10~' /opt/monit/bin/monit-start.sh
 
 # Download and install varnish
 COPY root /
