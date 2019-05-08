@@ -20,6 +20,8 @@ All options must be set as environment variable
 - PORT: Override which port varnish should listen on. Note that varnish does not
   run with root privileges so ports <= 1024 will not work.  
   defaults to 8080
+- STORAGE_BACKEND: Set the varnish storage backend
+  defaults to malloc,256m
   
 See [rancher-tools](https://github.com/rawmind0/rancher-tools) for more options.  
 We especially use `CONF_INTERVAL=2` when handling ip addresses so rolling-upgrades and changing links work without delay
